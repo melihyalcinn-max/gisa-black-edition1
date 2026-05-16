@@ -25,10 +25,10 @@ Bu pakette plan/placeholder olmaktan çıkarılıp çalışan hale getirilen mod
 - Canlıda Plausible/Clarity/PostHog ile büyütülebilir
 
 5) /admin/cms
-- JSON editörü
-- GitHub commit mantığı
+- içerik verisi editörü
+- merkezi sistem commit mantığı
 - Görsel yükleme mantığı
-- Canlı JSON preview
+- Canlı içerik verisi preview
 - Drag & Drop ana sayfa modül sırası
 - homeModules alanını site.json içine yazma
 

@@ -2,10 +2,10 @@
 # STORAGE PLAN
 
 Current:
-- GitHub media storage
+- merkezi sistem media storage
 
 Future:
-- Cloudflare R2
+- hız ve güvenlik altyapısı R2
 - Supabase Storage
 
 Reason:

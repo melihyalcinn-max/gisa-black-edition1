@@ -13,6 +13,6 @@ Future Stack:
 - Next.js
 - PostgreSQL
 - n8n
-- Cloudflare
-- Sentry
-- Vercel
+- hız ve güvenlik altyapısı
+- hata takip sistemi
+- yayın altyapısı

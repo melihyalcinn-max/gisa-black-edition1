@@ -50,11 +50,11 @@ async function sendMsg(){
   add('Cevap hazırlanıyor...', 'bot');
   const loading=chat.lastChild;
   try{
-    const res=await fetch('/api/chatgpt-assistant', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({message})});
+    const res=await fetch('/api/chatgpt-assistant', {method:'POST', headers:{'content-type':'application/json'}, body:içerik verisi.stringify({message})});
     const data=await res.json();
     loading.textContent=data.reply || 'Cevap alınamadı.';
   }catch(e){
-    loading.textContent='Bağlantı kurulamadı. Vercel deploy sonrası API endpoint aktif olacaktır.';
+    loading.textContent='Bağlantı kurulamadı. yayın altyapısı deploy sonrası API endpoint aktif olacaktır.';
   }
 }
 function quick(t){ input.value=t; sendMsg(); }

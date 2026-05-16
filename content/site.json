@@ -16,7 +16,7 @@
     "sassosWebhook": "",
     "brandStatement": "GISA BLACK EDITION; esans, hotel amenity, private label ve duyusal marka deneyimini tek ekranda premium bir vizyona dönüştürür.",
     "adminPasswordHint": "GISA BLACK EDITION güvenli admin şifresi proje notlarında yer alır.",
-    "cmsMode": "GitHub API üzerinden içerik ve görsel güncelleme; Vercel otomatik deploy eder."
+    "cmsMode": "merkezi sistem API üzerinden içerik ve görsel güncelleme; yayın altyapısı otomatik deploy eder."
   },
   "vision": "Luxury Hospitality Digital Infrastructure",
   "edition": "BLACK EDITION ULTIMATE",
@@ -24,8 +24,8 @@
     "AI Mockup Studio",
     "Luxury PDF Export",
     "Dynamic CMS",
-    "GitHub + Vercel CI/CD",
-    "Cloudflare Ready",
+    "merkezi sistem + yayın altyapısı otomatik yayın kontrolü",
+    "hız ve güvenlik altyapısı Ready",
     "SASSOS Integration"
   ]
 }

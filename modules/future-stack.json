@@ -1,7 +1,7 @@
 {
-  "analytics": ["Plausible", "Cloudflare Analytics"],
+  "analytics": ["Plausible", "hız ve güvenlik altyapısı Analytics"],
   "motion": ["Framer Motion", "GSAP", "Lenis"],
-  "security": ["Cloudflare", "Sentry"],
-  "cms": ["JSON CMS", "GitHub Sync"],
+  "security": ["hız ve güvenlik altyapısı", "hata takip sistemi"],
+  "cms": ["içerik verisi CMS", "merkezi sistem Sync"],
   "future": ["AI Catalog", "AI Mockup", "WhatsApp CRM"]
 }

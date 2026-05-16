@@ -18,7 +18,7 @@ Cevapları kısa, güven veren ve teklif almaya yönlendiren şekilde yaz.
 
 export default async function handler(req) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Only POST allowed' }), {
+    return new Response(içerik verisi.stringify({ error: 'Only POST allowed' }), {
       status: 405,
       headers: { 'content-type': 'application/json' },
     });
@@ -29,14 +29,14 @@ export default async function handler(req) {
     const message = String(body.message || '').slice(0, 2000);
 
     if (!message.trim()) {
-      return new Response(JSON.stringify({ reply: 'Mesajınızı yazarsanız yardımcı olayım.' }), {
+      return new Response(içerik verisi.stringify({ reply: 'Mesajınızı yazarsanız yardımcı olayım.' }), {
         status: 200,
         headers: { 'content-type': 'application/json' },
       });
     }
 
     if (!process.env.OPENAI_API_KEY) {
-      return new Response(JSON.stringify({
+      return new Response(içerik verisi.stringify({
         reply: fallbackReply(message),
         mode: 'fallback',
         note: 'OPENAI_API_KEY eklenmediği için ücretsiz template cevap döndü.'
@@ -52,7 +52,7 @@ export default async function handler(req) {
         'authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
         'content-type': 'application/json',
       },
-      body: JSON.stringify({
+      body: içerik verisi.stringify({
         model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
         input: [
           { role: 'system', content: SYSTEM_PROMPT },
@@ -64,7 +64,7 @@ export default async function handler(req) {
 
     if (!openaiRes.ok) {
       const err = await openaiRes.text();
-      return new Response(JSON.stringify({
+      return new Response(içerik verisi.stringify({
         reply: fallbackReply(message),
         mode: 'fallback',
         error: err.slice(0, 500)
@@ -80,13 +80,13 @@ export default async function handler(req) {
       data.output?.map(item => item.content?.map(c => c.text).join('')).join('\n') ||
       fallbackReply(message);
 
-    return new Response(JSON.stringify({ reply, mode: 'chatgpt' }), {
+    return new Response(içerik verisi.stringify({ reply, mode: 'chatgpt' }), {
       status: 200,
       headers: { 'content-type': 'application/json' },
     });
 
   } catch (error) {
-    return new Response(JSON.stringify({
+    return new Response(içerik verisi.stringify({
       reply: 'Şu anda asistan cevabı oluşturulamadı. WhatsApp üzerinden destek alabilirsiniz.',
       error: String(error)
     }), {
