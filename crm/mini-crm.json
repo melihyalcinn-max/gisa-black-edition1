@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "leads": [
+    {
+      "company": "Sample Hotel Group",
+      "status": "Numune Bekleniyor",
+      "source": "WhatsApp",
+      "interest": "450 ml matte black dispenser"
+    }
+  ]
+}

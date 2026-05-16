@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WhatsApp Sales Assistant | GISA Black Edition</title>
+  <style>
+    :root { --bg:#070707; --panel:#111; --soft:#1b1b1b; --text:#f7f2e8; --muted:#b8afa3; --gold:#c8a96a; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Inter, Arial, sans-serif; background: radial-gradient(circle at top, #1b1712, #070707 52%); color:var(--text); }
+    main { max-width:1180px; margin:0 auto; padding:52px 20px 80px; }
+    a { color:var(--gold); }
+    .eyebrow { color:var(--gold); letter-spacing:.22em; text-transform:uppercase; font-size:12px; }
+    h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(38px, 7vw, 84px); line-height:.95; margin:14px 0 18px; font-weight:400; }
+    p { color:var(--muted); line-height:1.7; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .card { background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(200,169,106,.22); border-radius:24px; padding:22px; box-shadow:0 25px 80px rgba(0,0,0,.24); }
+    input, textarea, select { width:100%; padding:13px 14px; border-radius:14px; border:1px solid rgba(200,169,106,.25); background:#0b0b0b; color:var(--text); margin:8px 0 14px; }
+    button { border:0; border-radius:999px; padding:13px 19px; background:var(--gold); color:#090909; font-weight:700; cursor:pointer; margin:6px 8px 6px 0; }
+    .ghost { background:transparent; color:var(--gold); border:1px solid rgba(200,169,106,.35); }
+    .output { white-space:pre-wrap; background:#090909; border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; color:#f8f0df; min-height:120px; }
+    canvas { width:100%; max-width:720px; background:#0c0c0c; border:1px solid rgba(200,169,106,.25); border-radius:24px; }
+    .nav { margin-bottom:32px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="nav"><a href="/">← Ana sayfa</a></div>
+  
+  <div class="eyebrow">Sales Reply Generator</div>
+  <h1>WhatsApp Sales Assistant</h1>
+  <p>Gelen müşteri mesajına premium, net ve satışa götüren cevap taslağı üretir.</p>
+  <div class="grid">
+    <div class="card">
+      <label>Müşteri mesajı</label><textarea id="msg" rows="7">Merhaba otelimiz için logolu dispenser fiyatı alabilir miyim?</textarea>
+      <label>Satış tonu</label><select id="tone"><option>Profesyonel</option><option>Lüks</option><option>Samimi</option><option>Kısa ve net</option></select>
+      <button onclick="reply()">Cevap üret</button>
+      <button class="ghost" onclick="copyOut()">Kopyala</button>
+    </div>
+    <div class="card"><div id="out" class="output"></div></div>
+  </div>
+    
+</main>
+
+<script>
+function reply(){
+ const msg=document.getElementById('msg').value, tone=document.getElementById('tone').value;
+ document.getElementById('out').textContent=`Merhaba, elbette yardımcı olalım.\n\nLogolu dispenser çalışmalarımızda ürün modeli, hacim, adet ve baskı detayına göre teklif hazırlıyoruz. Dilerseniz otelinizin logosunu paylaşın; size ürün üzerinde örnek mockup ve net teklif bilgisi ile dönüş yapalım.\n\nUygun olması için şu bilgileri iletebilir misiniz?\n- Yaklaşık adet\n- Tercih edilen hacim\n- Siyah / beyaz / şeffaf ürün tercihi\n- Logo baskı rengi\n\nMesaj tonu: ${tone}`;
+}
+function copyOut(){ navigator.clipboard.writeText(document.getElementById('out').textContent); }
+reply();
+</script>
+
+</body>
+</html>

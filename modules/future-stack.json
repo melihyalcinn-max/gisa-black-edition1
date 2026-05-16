@@ -1,0 +1,7 @@
+{
+  "analytics": ["Plausible", "Cloudflare Analytics"],
+  "motion": ["Framer Motion", "GSAP", "Lenis"],
+  "security": ["Cloudflare", "Sentry"],
+  "cms": ["JSON CMS", "GitHub Sync"],
+  "future": ["AI Catalog", "AI Mockup", "WhatsApp CRM"]
+}

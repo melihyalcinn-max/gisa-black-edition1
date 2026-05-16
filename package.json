@@ -1,0 +1,13 @@
+{
+  "name": "gisa-kimya-phase2-luxury-cms",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/build.js && npx serve dist",
+    "check": "npm run validate && npm run build",
+    "validate": "node scripts/validate-content.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

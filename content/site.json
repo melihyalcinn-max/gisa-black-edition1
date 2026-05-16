@@ -1,0 +1,31 @@
+{
+  "site": {
+    "name": "Gisa Kimya",
+    "url": "https://gisa-kimya.com",
+    "phone": "+90 541 207 50 07",
+    "whatsapp": "905412075007",
+    "email": "info@gisakimya.com",
+    "address": "Zafer Mah. Doğan Araslı Bulvarı No: 97/99 D:41, Özyurtlar Ncadde Business / Özyurtlar Araslı Business, İnönü, 34513 Esenyurt / İstanbul",
+    "description": "Gisa Kimya; kozmetik, parfüm, mum, kolonya, ıslak mendil, şampuan, krem, deterjan, yumuşatıcı, yüzey temizleyici, hotel & spa ve home fragrance markaları için premium esans, koku ve markaya özel duyusal deneyim çözümleri geliştirir.",
+    "heroVideo": "",
+    "heroImage": "/uploads/gisa-black-hero-placeholder.svg",
+    "plausibleDomain": "",
+    "clarityId": "",
+    "posthogKey": "",
+    "chatbotUrl": "",
+    "sassosWebhook": "",
+    "brandStatement": "GISA BLACK EDITION; esans, hotel amenity, private label ve duyusal marka deneyimini tek ekranda premium bir vizyona dönüştürür.",
+    "adminPasswordHint": "GISA BLACK EDITION güvenli admin şifresi proje notlarında yer alır.",
+    "cmsMode": "GitHub API üzerinden içerik ve görsel güncelleme; Vercel otomatik deploy eder."
+  },
+  "vision": "Luxury Hospitality Digital Infrastructure",
+  "edition": "BLACK EDITION ULTIMATE",
+  "features": [
+    "AI Mockup Studio",
+    "Luxury PDF Export",
+    "Dynamic CMS",
+    "GitHub + Vercel CI/CD",
+    "Cloudflare Ready",
+    "SASSOS Integration"
+  ]
+}

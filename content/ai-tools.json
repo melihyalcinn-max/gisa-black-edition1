@@ -1,0 +1,52 @@
+{
+  "edition": "GISA BLACK EDITION AI READY",
+  "free_first_strategy": true,
+  "modules": [
+    {
+      "id": "ai-logo-mockup",
+      "name": "AI Logo Mockup Studio",
+      "status": "working-local",
+      "cost": "free",
+      "route": "/ai-logo-mockup",
+      "description": "Logo yükle, dispenser üzerinde konumlandır, PNG olarak indir. İlk sürüm AI API istemez; canvas ile ücretsiz çalışır."
+    },
+    {
+      "id": "ai-copy-studio",
+      "name": "AI Catalog & Social Copy Studio",
+      "status": "working-template",
+      "cost": "free-local-template / API-ready",
+      "route": "/ai-copy-studio",
+      "description": "Ürün seçimine göre katalog metni, Instagram caption, story metni ve WhatsApp teklif cümlesi üretir."
+    },
+    {
+      "id": "scent-advisor",
+      "name": "AI Scent Advisor",
+      "status": "working-rule-engine",
+      "cost": "free",
+      "route": "/ai-scent-advisor",
+      "description": "Sektör, atmosfer ve hedef müşteri hissine göre koku ailesi önerir."
+    },
+    {
+      "id": "seo-engine",
+      "name": "AI SEO Engine",
+      "status": "working-template",
+      "cost": "free-local-template / API-ready",
+      "route": "/ai-seo-engine",
+      "description": "Başlık, meta description, keyword ve landing page outline üretir."
+    },
+    {
+      "id": "whatsapp-assistant",
+      "name": "WhatsApp Sales Assistant",
+      "status": "working-template",
+      "cost": "free",
+      "route": "/whatsapp-assistant",
+      "description": "Müşteri mesajına profesyonel satış cevabı taslakları üretir."
+    }
+  ],
+  "future_api_ready": {
+    "OPENAI_API_KEY": "",
+    "OPENROUTER_API_KEY": "",
+    "GEMINI_API_KEY": "",
+    "OLLAMA_BASE_URL": "http://localhost:11434"
+  }
+}

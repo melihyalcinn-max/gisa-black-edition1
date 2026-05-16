@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Numune Talep | GISA Black Edition</title>
+<style>
+body{margin:0;background:#070707;color:#f7f2e8;font-family:Inter,Arial,sans-serif}
+main{max-width:900px;margin:auto;padding:48px 20px}
+h1{font-size:64px;font-family:Georgia,serif;font-weight:400}
+.card{background:#121212;border:1px solid rgba(200,169,106,.25);padding:24px;border-radius:24px}
+input,textarea,select{width:100%;padding:14px;margin:8px 0 16px;background:#0b0b0b;border:1px solid rgba(200,169,106,.25);border-radius:14px;color:#f7f2e8}
+button{padding:14px 18px;border-radius:999px;border:0;background:#c8a96a;color:#090909;font-weight:700;cursor:pointer}
+.out{margin-top:18px;padding:16px;border-radius:18px;background:#0b0b0b}
+</style>
+</head>
+<body>
+<main>
+<h1>Numune Talep</h1>
+<div class="card">
+<input id="company" placeholder="Firma adı">
+<input id="name" placeholder="Yetkili kişi">
+<input id="phone" placeholder="Telefon">
+<select id="product">
+<option>450 ml Matte Black</option>
+<option>300 ml White Collection</option>
+<option>Amber Bottle Series</option>
+</select>
+<textarea id="note" rows="5" placeholder="Logo baskı / adet / teslim bilgisi"></textarea>
+<button onclick="send()">Talep Oluştur</button>
+<div class="out" id="out"></div>
+</div>
+</main>
+<script>
+function send(){
+ const c=document.getElementById('company').value;
+ const n=document.getElementById('name').value;
+ const p=document.getElementById('phone').value;
+ const pr=document.getElementById('product').value;
+ document.getElementById('out').textContent =
+`Talep oluşturuldu.
+
+Firma: ${c}
+Yetkili: ${n}
+Telefon: ${p}
+Ürün: ${pr}
+
+Bu kayıt CRM ve WhatsApp akışına gönderilmeye hazır.`;
+}
+</script>
+</body>
+</html>

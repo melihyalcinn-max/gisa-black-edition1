@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ChatGPT Sales Assistant | GISA Black Edition</title>
+  <style>
+    :root{--bg:#070707;--panel:#111;--text:#f7f2e8;--muted:#b8afa3;--gold:#c8a96a}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at top,#211b13,#070707 55%);color:var(--text);font-family:Inter,Arial,sans-serif}
+    main{max-width:980px;margin:0 auto;padding:48px 20px 80px}
+    a{color:var(--gold)}
+    .eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:12px}
+    h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(40px,7vw,82px);line-height:.95;margin:14px 0}
+    p{color:var(--muted);line-height:1.7}
+    .panel{border:1px solid rgba(200,169,106,.24);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:22px;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+    #chat{height:430px;overflow:auto;background:#090909;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px;margin-bottom:14px}
+    .msg{padding:13px 15px;border-radius:18px;margin:10px 0;max-width:82%;white-space:pre-wrap;line-height:1.55}
+    .user{margin-left:auto;background:#c8a96a;color:#070707}
+    .bot{background:#171717;color:#f7f2e8;border:1px solid rgba(200,169,106,.18)}
+    textarea{width:100%;min-height:95px;border-radius:18px;border:1px solid rgba(200,169,106,.28);background:#0b0b0b;color:var(--text);padding:14px;font-size:15px}
+    button{border:0;border-radius:999px;padding:13px 19px;background:var(--gold);color:#080808;font-weight:800;cursor:pointer;margin-top:10px}
+    .ghost{background:transparent;color:var(--gold);border:1px solid rgba(200,169,106,.38)}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="/ai-studio/">← AI Studio</a></p>
+  <div class="eyebrow">ChatGPT Connected Assistant</div>
+  <h1>GISA Sales Assistant</h1>
+  <p>ChatGPT API bağlanırsa gerçek AI satış asistanı gibi çalışır. API key yoksa ücretsiz fallback cevap üretir.</p>
+  <div class="panel">
+    <div id="chat"></div>
+    <textarea id="input" placeholder="Örnek: Otelimiz için logolu 450 ml dispenser fiyatı almak istiyorum."></textarea>
+    <div class="row">
+      <button onclick="sendMsg()">Gönder</button>
+      <button class="ghost" onclick="quick('Spa konsepti için hangi koku ailesini önerirsiniz?')">Koku öner</button>
+      <button class="ghost" onclick="quick('Logolu dispenser için teklif almak istiyorum.')">Teklif sor</button>
+    </div>
+  </div>
+</main>
+<script>
+const chat=document.getElementById('chat'), input=document.getElementById('input');
+function add(text, cls){ const d=document.createElement('div'); d.className='msg '+cls; d.textContent=text; chat.appendChild(d); chat.scrollTop=chat.scrollHeight; }
+add('Merhaba. GISA BLACK EDITION ürünleri için yardımcı olayım. Ürün tipi, adet ve logo baskı ihtiyacınızı yazabilirsiniz.', 'bot');
+async function sendMsg(){
+  const message=input.value.trim(); if(!message) return;
+  add(message,'user'); input.value='';
+  add('Cevap hazırlanıyor...', 'bot');
+  const loading=chat.lastChild;
+  try{
+    const res=await fetch('/api/chatgpt-assistant', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({message})});
+    const data=await res.json();
+    loading.textContent=data.reply || 'Cevap alınamadı.';
+  }catch(e){
+    loading.textContent='Bağlantı kurulamadı. Vercel deploy sonrası API endpoint aktif olacaktır.';
+  }
+}
+function quick(t){ input.value=t; sendMsg(); }
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+1. Upload to GitHub
+2. Import project into Vercel
+3. Connect custom domain
+4. Enable Cloudflare proxy
+5. Add environment variables
+6. Push updates -> auto deploy

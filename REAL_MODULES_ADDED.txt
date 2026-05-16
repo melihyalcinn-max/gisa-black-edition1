@@ -1,0 +1,35 @@
+Bu pakette plan/placeholder olmaktan çıkarılıp çalışan hale getirilen modüller:
+
+1) /katalog-olustur
+- Koku ve sektör seçimi
+- Canlı katalog önizleme
+- Tarayıcı Yazdır -> PDF olarak kaydet
+
+2) /mockup-studio
+- Logo görseli upload
+- Canvas üzerinde dispenser mockup
+- Black/White/Champagne tone seçimi
+- PNG indirme
+
+3) /teklif-studio
+- Ürün kalemi ekleme/silme
+- Adet x birim fiyat hesaplama
+- Teklif metni oluşturma
+- Kopyalama
+- WhatsApp'a aktarma
+
+4) /analytics
+- Tarayıcı localStorage üzerinde çalışan tıklama takibi
+- Event sayacı
+- Sıfırlama / yenileme
+- Canlıda Plausible/Clarity/PostHog ile büyütülebilir
+
+5) /admin/cms
+- JSON editörü
+- GitHub commit mantığı
+- Görsel yükleme mantığı
+- Canlı JSON preview
+- Drag & Drop ana sayfa modül sırası
+- homeModules alanını site.json içine yazma
+
+Build sonucu: 92 sayfa üretildi.

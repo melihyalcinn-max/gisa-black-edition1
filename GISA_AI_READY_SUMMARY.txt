@@ -1,0 +1,26 @@
+GISA BLACK EDITION - AI READY PACKAGE
+
+Added as working local/free tools:
+1. /ai-studio
+2. /ai-logo-mockup
+3. /ai-copy-studio
+4. /ai-scent-advisor
+5. /ai-seo-engine
+6. /whatsapp-assistant
+
+These do not require paid AI API for first version.
+They are API-ready for OpenAI, Gemini, OpenRouter, and Ollama.
+
+Purpose:
+- Make the site feel like a digital showroom
+- Help sales conversations
+- Generate premium catalog/social copy
+- Produce simple product logo mockups
+- Create SEO landing metadata
+
+
+Added ChatGPT integration:
+- /chatgpt-assistant
+- /api/chatgpt-assistant
+- OPENAI_API_KEY env support
+- fallback mode when key is missing

@@ -1,0 +1,22 @@
+GISA BLACK EDITION ADMIN
+
+Admin URL: /admin/cms
+Yeni güçlü admin şifresi:
+GISA-BlackEdition@2026#SASSOS!9vK4xQ2mL7
+
+Önemli güvenlik notu:
+- Bu statik sitede admin şifresi tarayıcı tarafında editör kapısıdır. Halktan gizler ama gerçek sunucu güvenliği değildir.
+- Gerçek güvenlik için Vercel Deployment Protection veya Cloudflare Access açılmalı.
+- GitHub token admin ekranında girilir; repoya kaydedilmez.
+- Token yetkisi mümkünse sadece ilgili repo + Contents Read/Write olmalı.
+
+Çalışma mantığı:
+1) /admin/cms açılır.
+2) Şifre girilir.
+3) GitHub owner / repo / branch / token yazılır.
+4) content/*.json dosyaları düzenlenir veya görsel public/uploads içine yüklenir.
+5) Kaydet butonu GitHub reposuna commit atar.
+6) Vercel GitHub'a bağlıysa aynı anda otomatik build/deploy eder.
+
+Bu pakette Phase 2 + Phase 3 tarafında özellikle otel portalına girilmedi.
+Odak: GISA vitrini, admin içerik yönetimi, görsel yönetimi, mockup/teklif sistemi, SEO, CI/CD ve müşteri gösterim vizyonu.

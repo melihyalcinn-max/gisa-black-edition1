@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Scent Advisor | GISA Black Edition</title>
+  <style>
+    :root { --bg:#070707; --panel:#111; --soft:#1b1b1b; --text:#f7f2e8; --muted:#b8afa3; --gold:#c8a96a; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Inter, Arial, sans-serif; background: radial-gradient(circle at top, #1b1712, #070707 52%); color:var(--text); }
+    main { max-width:1180px; margin:0 auto; padding:52px 20px 80px; }
+    a { color:var(--gold); }
+    .eyebrow { color:var(--gold); letter-spacing:.22em; text-transform:uppercase; font-size:12px; }
+    h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(38px, 7vw, 84px); line-height:.95; margin:14px 0 18px; font-weight:400; }
+    p { color:var(--muted); line-height:1.7; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .card { background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(200,169,106,.22); border-radius:24px; padding:22px; box-shadow:0 25px 80px rgba(0,0,0,.24); }
+    input, textarea, select { width:100%; padding:13px 14px; border-radius:14px; border:1px solid rgba(200,169,106,.25); background:#0b0b0b; color:var(--text); margin:8px 0 14px; }
+    button { border:0; border-radius:999px; padding:13px 19px; background:var(--gold); color:#090909; font-weight:700; cursor:pointer; margin:6px 8px 6px 0; }
+    .ghost { background:transparent; color:var(--gold); border:1px solid rgba(200,169,106,.35); }
+    .output { white-space:pre-wrap; background:#090909; border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; color:#f8f0df; min-height:120px; }
+    canvas { width:100%; max-width:720px; background:#0c0c0c; border:1px solid rgba(200,169,106,.25); border-radius:24px; }
+    .nav { margin-bottom:32px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="nav"><a href="/">← Ana sayfa</a></div>
+  
+  <div class="eyebrow">Rule Based AI Advisor</div>
+  <h1>AI Scent Advisor</h1>
+  <p>Sektör ve atmosfer seçimine göre koku ailesi önerir. Ücretsiz çalışır; ileride LLM ile zenginleştirilebilir.</p>
+  <div class="grid">
+    <div class="card">
+      <label>Sektör</label><select id="sector"><option>Hotel</option><option>Spa</option><option>Clinic</option><option>Restaurant</option><option>Residence</option></select>
+      <label>İstenen his</label><select id="mood"><option>Clean luxury</option><option>Warm elegance</option><option>Fresh energetic</option><option>Deep signature</option><option>Soft comfort</option></select>
+      <button onclick="advise()">Öner</button>
+    </div>
+    <div class="card"><div id="out" class="output"></div></div>
+  </div>
+    
+</main>
+
+<script>
+const map={
+ 'Clean luxury':'White Tea, Clean Cotton, Soft Musk',
+ 'Warm elegance':'Velvet Amber, Vanilla Cream, Tonka',
+ 'Fresh energetic':'Citrus Bloom, Bergamot, Ocean Air',
+ 'Deep signature':'Oud Wood, Sandalwood Musk, Amber Noir',
+ 'Soft comfort':'Powder Cotton, Cashmere, Creamy Vanilla'
+};
+function advise(){
+ const s=document.getElementById('sector').value, m=document.getElementById('mood').value;
+ document.getElementById('out').textContent=`ÖNERİLEN KOKU AİLESİ\n${map[m]}\n\nNEDEN?\n${s} için ${m.toLowerCase()} hissi, misafir algısında temiz, kontrollü ve premium bir ilk temas yaratır.\n\nÜRÜN EŞLEŞMESİ\nRefillable dispenser + oda kokusu + tekstil spreyi aynı koku ailesinden kurgulanırsa marka hafızası güçlenir.`;
+}
+advise();
+</script>
+
+</body>
+</html>
